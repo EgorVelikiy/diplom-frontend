@@ -1,0 +1,22 @@
+.account-widget svg:nth-child(1) {
+    cursor: pointer;
+    background-color: inherit;
+    fill: black;
+    margin-right: 15px;
+    transition: fill 0.5s;
+}
+
+.account-widget svg:nth-child(1):hover {
+    fill: white;
+}
+
+.account-widget svg:nth-child(2) {
+    cursor: pointer;
+    background-color: inherit;
+    fill: black;
+    transition: fill 0.5s;
+}
+
+.account-widget svg:nth-child(2):hover {
+    fill: white;
+}

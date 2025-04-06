@@ -1,0 +1,52 @@
+.file_update_container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.change_file {
+    background-color: rgb(206, 209, 231);
+    width: 100%;
+}
+
+.change_file:hover {
+    background-color: rgb(178, 169, 231);
+}
+
+.change_file:disabled {
+    cursor:auto;
+    background-color: rgb(207, 207, 207);
+    border-color: rgb(207, 207, 207);
+}
+
+#file_name {
+    height: 3rem;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+    background-color: rgb(247, 247, 247);
+    padding-left: 10px;
+    font-size: 20px;
+    border: 2px solid;
+}
+
+#file_name:focus {
+    border-color: rgb(91, 182, 209);
+    
+}
+
+#comment {
+    background-color: white;
+    padding: 1rem;
+    font-size: 1.5rem;
+    resize: none;
+    width: 20rem;
+    height: 10rem;
+    margin-bottom: 20px;
+    border: 2px solid;
+}
+
+#comment:focus {
+    border-color: rgb(91, 182, 209);
+}

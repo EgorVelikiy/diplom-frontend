@@ -1,0 +1,43 @@
+.loader {
+    position: absolute;
+    background-color: transparent;
+    top: 1rem;
+    left: 50vw;
+    width: 40px;
+    height: 40px;
+    border: 6px solid transparent;
+    border-radius: 50%;
+    border-top: 6px solid rgb(134, 90, 255);
+    border-right: 6px solid rgb(167, 102, 241);
+    border-bottom: 6px solid rgb(134, 90, 255);
+    border-left: 6px solid rgb(167, 102, 241);
+
+    animation: 
+        rotate-color 2s linear infinite,
+        morph 2s ease-in-out infinite;
+}
+
+@keyframes rotate-color {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes morph {
+    0%,
+    100% {
+        border-radius: 50%;;
+        width: 40px;
+        height: 40px;
+    }
+
+    50% {
+        border-radius: 10%;
+        width: 50px;
+        height: 50px;
+    }
+}

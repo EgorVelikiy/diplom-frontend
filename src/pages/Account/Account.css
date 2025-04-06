@@ -1,0 +1,46 @@
+.username-title {
+    margin: 0;
+}
+
+.change-form label {
+    background-color: inherit;
+}
+
+.password-btn {
+    background-color: rgb(206, 209, 231);
+    display: inline-block;
+    transition: background-color 0.5s, border-color 0.5s;
+   
+    font-size: 18px;
+    margin-right: 10px;
+    font-weight: 500;
+    border: 1px solid rgb(163, 173, 245);
+
+    margin-bottom: 10px;
+}
+
+.password-btn:hover {
+    background-color: rgb(152, 240, 171);
+    border-color: rgb(152, 240, 171);
+}
+
+.password-container {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 1s ease, opacity 1s ease;
+}
+
+.active {
+    max-height: 150px !important;
+    opacity: 1;
+    overflow: visible;
+}
+
+.signup-btn:disabled {
+    cursor:auto;
+    background-color: rgb(207, 207, 207);
+    border-color: rgb(207, 207, 207);
+}

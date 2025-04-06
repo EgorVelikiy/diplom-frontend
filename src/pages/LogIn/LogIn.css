@@ -1,0 +1,52 @@
+.form-container {
+    width: 40%;
+    height: 100%;
+    margin-bottom: 10px;
+}
+
+input[type="text"], input[type="password"], textarea, select {
+    outline: none;
+}
+
+.input {
+    height: 3rem;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+    background-color: rgb(247, 247, 247);
+    padding-left: 10px;
+    font-size: 20px;
+    border: 2px solid;
+}
+
+.login-form, .signup-form, .change-form, .file_update_form, .file_upload_form {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 20px;
+    background-color: rgb(255, 253, 251);
+}
+
+.input:focus {
+    border-color: rgb(91, 182, 209);
+    
+}
+
+.input:focus {
+    border-color: rgb(91, 182, 209);
+}
+
+.login-btn, .signup-btn {
+    background-color: rgb(206, 209, 231);
+    display: inline-block;
+    transition: background-color 0.5s, border-color 0.5s;
+   
+    font-size: 18px;
+    margin-right: 10px;
+    font-weight: 500;
+    border: 1px solid rgb(163, 173, 245);
+}
+
+.login-btn:hover, .signup-btn:hover {
+    background-color: rgb(152, 240, 171);
+    border-color: rgb(152, 240, 171);
+}

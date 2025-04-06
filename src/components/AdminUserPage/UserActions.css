@@ -1,0 +1,40 @@
+.files-widget svg {
+    fill: black;
+    background-color: transparent;
+    cursor: pointer;
+    transition: fill 0.5s;
+    margin-right: 15px;
+}
+
+.files-widget:hover svg {
+    fill: white;
+}
+
+.users-widget svg {
+    fill: black;
+    background-color: transparent;
+    cursor: pointer;
+    transition: fill 0.5s;
+}
+
+.users-widget:hover svg {
+    fill: white;
+}
+
+.main-widget {
+    display: flex;
+    width: 200px;
+    justify-content: space-around;
+}
+
+.file-upload svg {
+    fill: black;
+    background-color: transparent;
+    cursor: pointer;
+    transition: fill 0.5s;
+    margin-right: 15px;
+}
+
+.file-upload:hover svg {
+    fill: white;
+}

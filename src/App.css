@@ -1,0 +1,30 @@
+#root {
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+  font-size: 24px;
+}
+
+* {
+  color: black;
+  background-color: rgb(226, 225, 225);
+}
+
+body {
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+ul {
+  list-style-type: none;
+  width: 100%;
+  padding: 0;
+}
+
+a {
+  background-color: inherit;
+}
+
+span, div, nav {
+  background-color: inherit;
+}

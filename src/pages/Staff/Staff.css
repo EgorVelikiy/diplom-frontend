@@ -1,0 +1,24 @@
+.table-container {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+th {
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.user {
+    background-color: rgb(144, 155, 212);
+    padding: 5px 10px;
+    margin-right: 10px;
+    transition: background-color 0.5s;
+}
+
+.delete_user:hover {
+    background-color: rgb(247, 37, 37);
+}
+
+.open_user:hover {
+    background-color: rgb(98, 214, 98);
+}
