@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { FileInterface } from '../../types/index'
-import { deleteFile, downloadFile, getFile, getFiles, updateFile, uploadFile } from "../../api/files_api";
+import { deleteFile, downloadFile, getFile, getFiles, getSpecialLink, updateFile, uploadFile } from "../../api/files_api";
 
 interface initialState {
     currFile: FileInterface | null,
@@ -95,6 +95,14 @@ const FileSlice = createSlice({
             state.error = null;
         })
         .addCase(deleteFile.rejected, (state, action) => {
+            state.error = action.payload as string;
+        })
+
+        .addCase(getSpecialLink.pending, (state) => {
+            state.error = null;
+        })
+        .addCase(getSpecialLink.rejected, (state, action) => {
+            state.isLoading = false
             state.error = action.payload as string;
         })
 

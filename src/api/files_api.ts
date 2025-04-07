@@ -14,10 +14,10 @@ export const getFiles = createAsyncThunk(
                 }
             })
             return await response.data
-        } catch (err) {
-            console.log(err)
+        } catch (error) {
+            console.log(error)
             toast.error('Не удалось получить список файлов')
-            throw err
+            throw error
         }
     } 
 )
@@ -32,10 +32,10 @@ export const getFile = createAsyncThunk(
                 }
             })
             return await response.data
-        } catch (err) {
-            console.log(err)
+        } catch (error) {
+            console.log(error)
             toast.error('Не удалось получить доступ к файлу')
-            throw err
+            throw error
         }
     } 
 )
@@ -52,10 +52,10 @@ export const uploadFile = createAsyncThunk(
             })
             toast.success('Файл успешно загружен')
             return await response.data
-        } catch (err) {
-            console.log(err)
+        } catch (error) {
+            console.log(error)
             toast.error('Не удалось загрузить файл')
-            throw err
+            throw error
         }
     } 
 )
@@ -79,10 +79,10 @@ export const downloadFile = createAsyncThunk(
             link.click();
             document.body.removeChild(link);
             window.URL.revokeObjectURL(url)
-        } catch (err) {
-            console.log(err)
+        } catch (error) {
+            console.log(error)
             toast.error('Не удалось скачать файл')
-            throw err
+            throw error
         }
     } 
 )
@@ -98,10 +98,10 @@ export const updateFile = createAsyncThunk(
             })
             console.log(response.data)
             return await response.data
-        } catch (err) {
-            console.log(err)
+        } catch (error) {
+            console.log(error)
             toast.error('Не удалось обновить файл')
-            throw err
+            throw error
         }
     } 
 )
@@ -117,11 +117,30 @@ export const deleteFile = createAsyncThunk(
             })
             toast.success('Файл успешно удалён')
             return await response.data
-        } catch (err) {
-            console.log(err)
+        } catch (error) {
+            console.log(error)
             toast.error('Не удалось удалить файл')
-            throw err
+            throw error
         }
     } 
 )
 
+export const getSpecialLink = createAsyncThunk(
+    '/files/get_link',
+    async (id: number) => {
+        try {
+            const response = await api.get(`/root/files/get_link/${id}/`, {
+                headers: {
+                    'Authorization': `Token ${localStorage.getItem('token')}`
+                }
+            })
+
+            navigator.clipboard.writeText(response.data.special_link)
+
+        } catch (error) {
+            console.log(error)
+            toast.error('Не удалось получить ссылку: ' + error)
+            throw error
+        }
+    } 
+)

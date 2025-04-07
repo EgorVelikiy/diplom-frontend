@@ -1,0 +1,20 @@
+.Toastify__progress-bar--wrp {
+    height: 10px;
+}
+  
+.Toastify__progress-bar--success {
+    background-color: #87ee8b;
+}
+  
+.Toastify__progress-bar--error {
+    background-color: #fa7268;
+}
+  
+.Toastify__progress-bar--info {
+    height: 10px;
+    background-color: #f4ff61;
+}
+
+.Toastify__toast-icon  {
+    display: none;
+}

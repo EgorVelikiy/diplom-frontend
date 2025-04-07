@@ -4,6 +4,7 @@ import { signUp } from '../../api/users_api'
 import { useDispatch } from 'react-redux'
 import { AppDispatch } from '../../redux/store/configureStore'
 import { toast } from 'react-toastify'
+import { validatePassword, validateUsername } from '../../validation/validate'
 
 export default function SignUp() {
     const dispatch = useDispatch<AppDispatch>()
@@ -11,6 +12,20 @@ export default function SignUp() {
     
     const handleFormSubmit = async (e: any) => {
         e.preventDefault()
+
+        const usernameError = validateUsername(e.target.elements.username.value)
+        const passwordError = validatePassword(e.target.elements.password.value)
+    
+        if (usernameError) {
+            toast.info(usernameError)
+            return
+        }
+        if (passwordError) {
+            toast.info(passwordError)
+            return
+        }
+
+                
         const data = {
             username: e.target.elements.username.value,
             password: e.target.elements.password.value,

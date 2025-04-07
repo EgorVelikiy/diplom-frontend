@@ -32,9 +32,15 @@ td {
     white-space: normal;
 }
 
+
 th:nth-child(1), td:nth-child(1) {
+    width: 20rem;
+}
+
+th:nth-child(2), td:nth-child(2) {
     width: 25rem;
 }
+
 
 th:nth-child(3), td:nth-child(3) {
     width: 9rem;
@@ -50,4 +56,10 @@ th:nth-child(5), td:nth-child(5) {
 
 th:nth-child(6), td:nth-child(6) {
     width: 15rem;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
 }

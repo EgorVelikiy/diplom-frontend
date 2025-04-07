@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import moment from 'moment'
 import './FileStorage.css'
 import { AppDispatch, RootState } from '../../redux/store/configureStore'
-import { deleteFile, downloadFile, getFile, getFiles } from '../../api/files_api';
+import { deleteFile, downloadFile, getFile, getFiles, getSpecialLink } from '../../api/files_api';
 import { useEffect } from 'react';
 import { FileInterface } from '../../types';
 import { toast } from 'react-toastify';
@@ -23,6 +23,14 @@ export default function FilesStorage() {
             });
         
     }, [dispatch, owner?.username])
+
+    const getLinkHandler = (id: number) => {
+        dispatch(getSpecialLink(id))
+            .unwrap()
+            .then(() => {
+                toast.success('Ссылка скопирована в буфер обмена')
+            })
+    }
 
     const getFileHandler = (id: number) => {
         dispatch(getFile(id))
@@ -64,7 +72,6 @@ export default function FilesStorage() {
     }
 
     const columns = [
-        { title: 'Файл', ind: 'file_name' },
         {
             title: 'Комментарий',
             ind: 'comment',
@@ -121,6 +128,9 @@ export default function FilesStorage() {
                 <table className='storage' style={{ width: '100%', borderCollapse: 'collapse' }}>
                     <thead>
                         <tr>
+                            <th key='file_name' style={{ padding: '10px', border: '1px solid black', backgroundColor: 'white' }}>
+                                Файл
+                            </th>
                             {columns.map((col) => (
                             <th key={col.title} style={{ padding: '10px', border: '1px solid black', backgroundColor: 'white' }}>
                                 {col.title}
@@ -131,6 +141,11 @@ export default function FilesStorage() {
                     <tbody>
                         {files.map((file) => (
                             <tr key={file.id}>
+                                <td key={file.file_name} style={{ padding: '10px', border: '1px solid black', backgroundColor: 'white' }}>
+                                    <a title='Скопировать ссылку' onClick={() => getLinkHandler(file.id)}>
+                                        {file.file_name}
+                                    </a>
+                                </td>
                                 {columns.map((col) => (
                                     <td key={col.ind} style={{ padding: '10px', border: '1px solid black', backgroundColor: 'white' }}>
                                         {col.render ? col.render(file[col.ind], file) : file[col.ind]}

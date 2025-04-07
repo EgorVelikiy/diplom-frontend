@@ -1,14 +1,14 @@
 import { ToastContainer } from 'react-toastify'
-
+import './Toast.css'
 export function ToastProvider() {
   return (
     <ToastContainer
-      hideProgressBar
       stacked
-      autoClose={800}
+      autoClose={1500}
       icon={() => {
-        return <div className="indicator bg-green-500" />
+        return <div />
       }}
+      className="custom-toast-container"
     />
   )
 }

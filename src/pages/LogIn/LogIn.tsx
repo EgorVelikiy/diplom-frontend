@@ -8,9 +8,10 @@ export default function LogIn() {
     const dispatch = useDispatch<AppDispatch>()
     const navigate = useNavigate()
     const isLoading = useSelector((state: RootState) => state.reducers.users.isLoading)
-    
+
     const handleFormSubmit = async (e: any) => {
         e.preventDefault()
+
         const data = {
             username: e.target.elements.username.value,
             password: e.target.elements.password.value,
